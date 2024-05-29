@@ -82,3 +82,31 @@ class YandexScooterOrderPage(BasePage):
     @allure.step("Перейти к статусу заказа")
     def click_go_to_status(self):
         return self.find_element(OrderPageLocators.SHOW_ORDER_STATUS_BUTTON).click()
+
+    @allure.step("Отображение баннера создания заказа")
+    def order_completed_banner_is_displayed(self):
+        return self.find_element(OrderPageLocators.ORDER_COMPLETED_BANNER).is_displayed()
+
+    @allure.step("Отображение шага 'Про аренду'")
+    def check_about_rent_step_is_displayed(self):
+        return self.find_element(OrderPageLocators.ABOUT_RENT_PAGE).is_displayed()
+
+    @allure.step("Отображение сообщения о некорректном заполнении поля 'Имя'")
+    def check_incorrect_first_name_message(self):
+        return self.find_element(OrderPageLocators.INCORRECT_FIRST_NAME_MESSAGE).is_displayed()
+
+    @allure.step("Отображение сообщения о некорректном заполнении поля 'Фамилия'")
+    def check_incorrect_last_name_message(self):
+        return self.find_element(OrderPageLocators.INCORRECT_LAST_NAME_MESSAGE).is_displayed()
+
+    @allure.step("Отображение сообщения о некорректном заполнении поля 'Адрес'")
+    def check_incorrect_adress_message(self):
+        return self.find_element(OrderPageLocators.INCORRECT_ADDRESS_MESSAGE).is_displayed()
+
+    @allure.step("Отображение сообщения о некорректном заполнении поля 'Телефон'")
+    def check_incorrect_tel_number_message(self):
+        return self.find_element(OrderPageLocators.INCORRECT_TELEPHONE_NUMBER_MESSAGE).is_displayed()
+
+    @allure.step("Отображение сообщения о пустом поле 'станция метро'")
+    def check_incorrect_metro_station_message(self):
+        return self.find_element(OrderPageLocators.INCORRECT_METRO_STATION_MESSAGE).is_displayed()

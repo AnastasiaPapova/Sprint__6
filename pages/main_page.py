@@ -1,8 +1,7 @@
 from pages.base_page import BasePage
 import allure
 from main_data.locators import MainPageLocators
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from main_data.locators import YandexDzenLocators
 
 
 class YandexScooterMainPage(BasePage):
@@ -44,6 +43,10 @@ class YandexScooterMainPage(BasePage):
     def switch_window(self, window_number: int = 1):
         return self.driver.switch_to.window(self.driver.window_handles[window_number])
 
-    @allure.step("Дождаться загрузки страницы после перехода на новую вкладку")
-    def wait_url_until_not_about_blank(self, time=10):
-        return WebDriverWait(self.driver, time).until_not(EC.url_to_be('about:blank'))
+    @allure.step("Ожидание загрузки страницы 'Дзен'")
+    def implicitly_wait_in_dzen(self):
+        return self.find_element(YandexDzenLocators.DZEN_BLOCK).is_displayed()
+
+    @allure.step("Найти блок с темами на странице 'Дзен'")
+    def load_dzen_page(self):
+        return self.find_element(YandexDzenLocators.DZEN_BLOCK).text

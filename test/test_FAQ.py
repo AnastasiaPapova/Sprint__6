@@ -8,6 +8,7 @@ from conftest import driver
 
 
 class TestYandexScooterFAQ:
+    @allure.title("При нажатии на вопрос раскрывается аккордеон с ответом")
     @allure.description("Проверяем список вопросов и ответов на главной странице")
     @pytest.mark.parametrize('question, answer, expected_answer',
                              [(AnswersQuestionsFAQ.FIRST_QUESTION_BUTTON, AnswersQuestionsFAQ.FIRST_QUESTION_ANSWER,
@@ -26,6 +27,7 @@ class TestYandexScooterFAQ:
                                YandexScooterFAQAnswers.SEVENTH_ANSWER),
                               (AnswersQuestionsFAQ.EIGHTH_QUESTION_BUTTON, AnswersQuestionsFAQ.EIGHTH_QUESTION_ANSWER,
                                YandexScooterFAQAnswers.EIGHTH_ANSWER)])
+    @allure.title("Проверка ответов с ожидаемыми значениями")
     def test_questions(self, question, answer, expected_answer, driver):
         main_page = YandexScooterMainPage(driver)
         main_page.go_to_site(Urls.MAIN_PAGE)

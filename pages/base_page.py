@@ -26,3 +26,11 @@ class BasePage:
     @allure.step("Получить текущий URL")
     def current_url(self):
         return self.driver.current_url
+
+    @allure.step("Дождаться загрузки страницы после перехода на новую вкладку")
+    def wait_url_until_not_about_blank(self, time=10):
+        return WebDriverWait(self.driver, time).until_not(EC.url_to_be('about:blank'))
+
+    @allure.step("Дождаться полной загрузки страницы")
+    def implicitly_wait_in_load(self):
+        return self.driver.implicitly_wait(10)

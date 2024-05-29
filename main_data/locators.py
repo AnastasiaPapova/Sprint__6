@@ -12,24 +12,6 @@ class MainPageLocators:
 
 
 class AnswersQuestionsFAQ:
-    # FIRST_QUESTION_BUTTON = [By.CSS_SELECTOR, "#accordion__heading-0"]
-    # FIRST_QUESTION_ANSWER = [By.CSS_SELECTOR, "#accordion__panel-0 > p"]
-    # SECOND_QUESTION_BUTTON = [By.CSS_SELECTOR, "#accordion__heading-1"]
-    # SECOND_QUESTION_ANSWER = [By.CSS_SELECTOR, "#accordion__panel-1 > p"]
-    # THIRD_QUESTION_BUTTON = [By.CSS_SELECTOR, "#accordion__heading-2"]
-    # THIRD_QUESTION_ANSWER = [By.CSS_SELECTOR, "#accordion__panel-2 > p"]
-    # FOURTH_QUESTION_BUTTON = [By.CSS_SELECTOR, "#accordion__heading-3"]
-    # FOURTH_QUESTION_ANSWER = [By.CSS_SELECTOR, "#accordion__panel-3 > p"]
-    # FIFTH_QUESTION_BUTTON = [By.CSS_SELECTOR, "#accordion__heading-4"]
-    # FIFTH_QUESTION_ANSWER = [By.CSS_SELECTOR, "#accordion__panel-4 > p"]
-    # SIXTH_QUESTION_BUTTON = [By.CSS_SELECTOR, "#accordion__heading-5"]
-    # SIXTH_QUESTION_ANSWER = [By.CSS_SELECTOR, "#accordion__panel-5 > p"]
-    # SEVENTH_QUESTION_BUTTON = [By.CSS_SELECTOR, "#accordion__heading-6"]
-    # SEVENTH_QUESTION_ANSWER = [By.CSS_SELECTOR, "#accordion__panel-6 > p"]
-    # EIGHTH_QUESTION_BUTTON = [By.CSS_SELECTOR, "#accordion__heading-7"]
-    # EIGHTH_QUESTION_ANSWER = [By.CSS_SELECTOR, "#accordion__heading-7 > p"]
-
-
     FIRST_QUESTION_BUTTON = [By.XPATH, "//*[@id='accordion__heading-0']"]
     FIRST_QUESTION_ANSWER = [By.XPATH, "//*[@id='accordion__panel-0']"]
     SECOND_QUESTION_BUTTON = [By.XPATH, "//*[@id='accordion__heading-1']"]
@@ -77,3 +59,7 @@ class OrderPageLocators:
     ACCEPT_ORDER_BUTTON = [By.XPATH, ".//button[text()='Да']"]
     ORDER_COMPLETED_BANNER = [By.XPATH, ".//div[text()='Заказ оформлен']"]
     SHOW_ORDER_STATUS_BUTTON = [By.XPATH, ".//button[text()='Посмотреть статус']"]
+
+
+class YandexDzenLocators:
+    DZEN_BLOCK = [By.XPATH, ".//div[text()='Темы в Дзене']"]
